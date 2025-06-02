@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
 function Firearms() {
-const \[search, setSearch] = useState('');
-const \[filterType, setFilterType] = useState('All');
+const [search, setSearch] = useState('');
+const [filterType, setFilterType] = useState('All');
 
-const firearms = \[
+const firearms = [
 { id: 1, name: 'Glock 19', caliber: '9mm', type: 'Handgun', rounds: 800, status: 'Clean' },
 { id: 2, name: 'MPA 6.5 Creedmoor', caliber: '6.5 CM', type: 'Precision Rifle', rounds: 215, status: 'Due for Cleaning' },
 { id: 3, name: 'Aero DMR', caliber: '6.5 CM', type: 'Semi-Auto DMR', rounds: 420, status: 'Clean' },
