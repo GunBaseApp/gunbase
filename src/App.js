@@ -1,29 +1,46 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { useState } from 'react';
 
-import Navbar from './components/Navbar';
-import Firearms from './pages/Firearms';
-import Ammo from './pages/Ammo';
-import Accessories from './pages/Accessories';
-import Maintenance from './pages/Maintenance';
-import Reports from './pages/Reports';
-import Dashboard from './pages/Dashboard';
+function Ammo() {
+  const [search, setSearch] = useState('');
+  const [filterCaliber, setFilterCaliber] = useState('All');
 
-function App() {
+  const ammoInventory = [
+    { caliber: '9mm', brand: 'Federal', quantity: 500 },
+    { caliber: '.223', brand: 'Hornady', quantity: 300 },
+    { caliber: '6.5 Creedmoor', brand: 'AAC', quantity: 120 },
+  ];
+
+  const filteredAmmo = ammoInventory.filter(
+    (ammo) =>
+      (filterCaliber === 'All' || ammo.caliber === filterCaliber) &&
+      (search === '' || ammo.brand.toLowerCase().includes(search.toLowerCase()))
+  );
+
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/firearms" element={<Firearms />} />
-        <Route path="/ammo" element={<Ammo />} />
-        <Route path="/accessories" element={<Accessories />} />
-        <Route path="/maintenance" element={<Maintenance />} />
-        <Route path="/reports" element={<Reports />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-      </Routes>
-    </Router>
+    <div>
+      <h2>Ammo Inventory</h2>
+      <input
+        type="text"
+        placeholder="Search by brand"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
+      <select value={filterCaliber} onChange={(e) => setFilterCaliber(e.target.value)}>
+        <option value="All">All Calibers</option>
+        <option value="9mm">9mm</option>
+        <option value=".223">.223</option>
+        <option value="6.5 Creedmoor">6.5 Creedmoor</option>
+      </select>
+      <ul>
+        {filteredAmmo.map((ammo, index) => (
+          <li key={index}>
+            {ammo.quantity} rounds of {ammo.brand} {ammo.caliber}
+            <button>Edit</button>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
-export default App;
+export default Ammo;
