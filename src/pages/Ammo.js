@@ -37,5 +37,16 @@ function Ammo() {
         />
 
         <select
-          value={filterCaliber}
-          onChange={e => s
+  value={filterCaliber}
+  onChange={e => setFilterCaliber(e.target.value)}
+  style={{
+    padding: '8px',
+    borderRadius: '4px',
+    border: '1px solid #ccc'
+  }}
+>
+  <option value="All">All Calibers</option>
+  <option value="9mm">9mm</option>
+  <option value="6.5 CM">6.5 CM</option>
+  <option value=".223">.223</option>
+</select>
