@@ -6,7 +6,7 @@ function Navbar() {
     <nav style={styles.nav}>
       <div style={styles.left}>
         <img
-  src="/logo.png"
+  src="/logo1.png"
   alt="GunBase Logo"
   style={{
     maxWidth: '160px',
