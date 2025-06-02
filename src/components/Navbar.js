@@ -1,14 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import logo from '../assets/logo4.png';
+
+
 function Navbar() {
   return (
     <nav style={styles.nav}>
       <div style={styles.left}>
         <img
-  src="/logo4.png"
-  alt="GunBase logo"
-  style={styles.logo}
+  src={require('../assets/logo4.png')}
+  alt="GunBase Logo"
+  style={{ height: '50px', objectFit: 'contain' }}
 />
       </div>
       <div style={styles.right}>
