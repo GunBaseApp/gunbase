@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 function Reports() {
-const \[selectedReport, setSelectedReport] = useState('');
+const [selectedReport, setSelectedReport] = useState('');
 
 const renderReport = () => {
 switch (selectedReport) {
@@ -40,7 +40,7 @@ return ( <div>
     {renderReport()}
   </div>
 </div>
-```
+
 
 );
 }

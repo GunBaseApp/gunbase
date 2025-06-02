@@ -50,3 +50,18 @@ function Ammo() {
   <option value="6.5 CM">6.5 CM</option>
   <option value=".223">.223</option>
 </select>
+      </div>
+
+      {/* You may want to render the filtered ammo list here */}
+      <ul>
+        {filtered.map(item => (
+          <li key={item.id}>
+            {item.brand} {item.type} - {item.caliber} ({item.quantity} rounds)
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default Ammo;

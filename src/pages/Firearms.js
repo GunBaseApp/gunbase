@@ -61,6 +61,15 @@ function Firearms() {
             <th style={th}>Caliber</th>
           </tr>
         </thead>
+        <tbody>
+          {filtered.map(item => (
+            <tr key={item.id}>
+              <td style={td}>{item.brand}</td>
+              <td style={td}>{item.model}</td>
+              <td style={td}>{item.type}</td>
+              <td style={td}>{item.caliber}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>

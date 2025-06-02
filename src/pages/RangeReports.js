@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
 function RangeReports() {
-const \[search, setSearch] = useState('');
-const \[filterFirearm, setFilterFirearm] = useState('All');
+const [search, setSearch] = useState('');
+const [filterFirearm, setFilterFirearm] = useState('All');
 
-const reports = \[
+const reports = [
 {
 id: 1,
 date: '2025-02-11',
@@ -37,7 +37,7 @@ item.location.toLowerCase().includes(search.toLowerCase())
 )
 .filter(item => filterFirearm === 'All' ? true : item.firearms === filterFirearm);
 
-const firearmOptions = \[...new Set(reports.map(r => r.firearms))];
+const firearmOptions = [...new Set(reports.map(r => r.firearms))];
 
 return ( <div>
 \<h2 style={{ marginBottom: '1rem' }}>Range Reports</h2>
@@ -109,7 +109,7 @@ return ( <div>
     </tbody>
   </table>
 </div>
-```
+
 
 );
 }
