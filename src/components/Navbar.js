@@ -5,7 +5,16 @@ function Navbar() {
   return (
     <nav style={styles.nav}>
       <div style={styles.left}>
-        <img src="/logo.png" alt="GunBase Logo" style={styles.logo} />
+        <img
+  src="/logo.png"
+  alt="GunBase Logo"
+  style={{
+    maxWidth: '160px',
+    height: 'auto',
+    objectFit: 'contain'
+  }}
+/>
+
       </div>
       <div style={styles.right}>
         <Link to="/" style={styles.link}>Dashboard</Link>
